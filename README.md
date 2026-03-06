@@ -1,11 +1,17 @@
-# LangChain tool for executing AI-generated Python code safely.
+# LangChain Disposable
 
+Run AI generated Python code safely.
 
-Example：
+## Install
 
+pip install langchain-disposable
 
-```bash
-from langchain_disposable import execute_python
+## Usage
 
-execute_python("print(2+2)")
-```
+```python
+from langchain_disposable import disposable_tool
+
+tools = [disposable_tool]
+
+agent.run("calculate factorial of 10")
+···
