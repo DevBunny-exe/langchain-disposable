@@ -1,20 +1,22 @@
 from langchain.agents import initialize_agent
-from langchain.llms import OpenAI
+from langchain.chat_models import ChatOpenAI
 
-from langchain_disposable.tool import execute_python
+from langchain_disposable.tool import disposable_tool
 
 
-tools = [execute_python]
+llm = ChatOpenAI(
+    temperature=0,
+)
 
-llm = OpenAI()
+tools = [disposable_tool]
 
 agent = initialize_agent(
     tools,
     llm,
     agent="zero-shot-react-description",
-    verbose=True
+    verbose=True,
 )
 
 agent.run(
-    "Calculate fibonacci of 20 using python"
+    "Use python to calculate factorial of 20"
 )
