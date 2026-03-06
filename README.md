@@ -14,4 +14,3 @@ from langchain_disposable import disposable_tool
 tools = [disposable_tool]
 
 agent.run("calculate factorial of 10")
-···
